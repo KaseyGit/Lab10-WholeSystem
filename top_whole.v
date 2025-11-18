@@ -1,14 +1,14 @@
 module top_whole(input clk, rst, output reg[7:0] result);
 
 wire [3:0] D; //rom data_out
-output reg DA; //output from cu
-output reg SA; //output from cu
-output reg SB; //output from cu
-output reg W_rf; //output from cu
-output reg W_ram;
+reg DA; //output from cu
+reg SA; //output from cu
+reg SB; //output from cu
+reg W_rf; //output from cu
+reg W_ram;
 wire RF_A; 
 wire RF_B;
-output reg [7:0] product; //wire or output?
+reg [7:0] product; //wire or output?
 
 //control unit
 cu control(.clk(clk), .reset(rst),.w_rf(W_rf), .DA(DA), .SA(SA), .SB(SB), .w_ram(W_ram));
