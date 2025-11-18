@@ -2,7 +2,7 @@ module top_whole(input clk, rst, output reg[7:0] result);
 
 wire [3:0] D; //rom data_out
 output reg DA; //output from cu
-ouput reg SA; //output from cu
+output reg SA; //output from cu
 output reg SB; //output from cu
 output reg W_rf; //output from cu
 output reg W_ram;
