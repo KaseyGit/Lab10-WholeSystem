@@ -16,7 +16,7 @@ wire[3:0] reg2_out;
 
 Decoder dec(.load_enable(load_enable), .DA(DA), .W(W));
 RegisterNbit reg1(.Dout(reg1_out), .Din(D), .Load(load_enable[0]), .reset(rst), .clock(clk));
-RegisterNbit reg1(.Dout(reg2_out), .Din(D), .Load(load_enable[1]), .reset(rst), .clock(clk));
+RegisterNbit reg2(.Dout(reg2_out), .Din(D), .Load(load_enable[1]), .reset(rst), .clock(clk));
 Mux2to1 mux1(.Y(A),.I1(reg1_out), .I2(reg2_out), .S(SA));
 Mux2to1 mux2(.Y(B),.I1(reg1_out), .I2(reg2_out), .S(SB));
 
