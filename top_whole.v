@@ -9,6 +9,7 @@ reg W_ram;
 wire RF_A; 
 wire RF_B;
 reg [7:0] product; //wire or output?
+reg [7:0] addr;
 
 //control unit
 cu control(.clk(clk), .reset(rst),.w_rf(W_rf), .DA(DA), .SA(SA), .SB(SB), .w_ram(W_ram));
