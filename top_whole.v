@@ -18,12 +18,12 @@ cu control(.clk(clk), .reset(rst),.w_rf(W_rf), .DA(DA), .SA(SA), .SB(SB), .w_ram
 rom rom_call(.clk(clk), .reset(rst), .rom_adr(addr), .data_out(D));
 
 //RF
-RF register_file(.A(RF_A), .B(RF_B), .SA(SA), .SB(SB), .D(D), .DA(DA), .W_rf(W), .rst(.rst), .clk(clk));
+RF register_file(.A(RF_A), .B(RF_B), .SA(SA), .SB(SB), .D(D), .DA(DA), .W(W_rf), .rst(.rst), .clk(clk));
 
 //Multiplier
 combo_mult mult(.a(RF_A), .b(RF_B), .p(product));
 
 //RAM
-ram ram_call(.clk(clk), .rst(rst), .W_ram(w), .product(data_in), .adr(addr), .data_out(result));
+ram ram_call(.clk(clk), .rst(rst), .w(W_ram), .data_in(product), .adr(addr), .data_out(result));
 
 endmodule
